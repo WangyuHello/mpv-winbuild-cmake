@@ -2,6 +2,7 @@ ExternalProject_Add(vorbis
     DEPENDS ogg
     URL "https://downloads.xiph.org/releases/vorbis/libvorbis-1.3.7.tar.xz"
     URL_HASH SHA256=b33cc4934322bcbf6efcbacf49e3ca01aadbea4114ec9589d1b1e9d20f72954b
+    DOWNLOAD_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure
         --host=${TARGET_ARCH}

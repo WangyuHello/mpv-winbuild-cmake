@@ -1,5 +1,6 @@
 ExternalProject_Add(lame
     GIT_REPOSITORY https://salsa.debian.org/multimedia-team/lame.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
     PATCH_COMMAND ${DEBPATCH}
     CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure

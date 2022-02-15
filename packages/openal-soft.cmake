@@ -1,5 +1,6 @@
 ExternalProject_Add(openal-soft
     GIT_REPOSITORY https://github.com/kcat/openal-soft.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${MINGW_INSTALL_PREFIX}

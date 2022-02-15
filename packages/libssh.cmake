@@ -3,6 +3,7 @@ ExternalProject_Add(libssh
         zlib
         libressl
     GIT_REPOSITORY https://git.libssh.org/projects/libssh.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     PATCH_COMMAND ${EXEC} git am ${CMAKE_CURRENT_SOURCE_DIR}/libssh-*.patch

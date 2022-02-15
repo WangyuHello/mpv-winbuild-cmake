@@ -1,5 +1,6 @@
 ExternalProject_Add(libbs2b
     GIT_REPOSITORY https://github.com/alexmarsev/libbs2b.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     PATCH_COMMAND ${EXEC} git am ${CMAKE_CURRENT_SOURCE_DIR}/libbs2b-*.patch
     UPDATE_COMMAND ""

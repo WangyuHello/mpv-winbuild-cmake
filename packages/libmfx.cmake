@@ -1,5 +1,6 @@
 ExternalProject_Add(libmfx
     GIT_REPOSITORY https://github.com/lu-zero/mfx_dispatch.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure

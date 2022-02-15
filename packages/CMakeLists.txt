@@ -195,6 +195,7 @@ list(APPEND ep
     spirv-tools
     spirv-cross
     glslang
+    vulkan-header
     vulkan
     shaderc
     libepoxy
@@ -216,8 +217,12 @@ list(APPEND ep
     megasdk
 )
 foreach(package IN LISTS ep)
+    if(NOT ${SINGLE_SOURCE_LOCATION} STREQUAL "")
+        set(SOURCE_LOCATION "${SINGLE_SOURCE_LOCATION}/${package}")
+    endif()
     include(${CMAKE_CURRENT_SOURCE_DIR}/${package}.cmake)
     message(STATUS "Parsing package ${package}")
+    set(SOURCE_LOCATION "")
 endforeach()
 
 set(UPDATE_SCRIPT ${CMAKE_SOURCE_DIR}/scripts/update-repo.sh)
@@ -225,6 +230,6 @@ add_custom_target(update
     USES_TERMINAL
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMAND chmod 755 ${UPDATE_SCRIPT}
-    COMMAND ${EXEC} ${UPDATE_SCRIPT}
+    COMMAND ${EXEC} ${UPDATE_SCRIPT} ${SINGLE_SOURCE_LOCATION}
     COMMENT "Updating git repo"
 )

@@ -1,5 +1,6 @@
 ExternalProject_Add(dav1d
     GIT_REPOSITORY https://code.videolan.org/videolan/dav1d.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} meson <BINARY_DIR> <SOURCE_DIR>

@@ -20,6 +20,7 @@ gendef - $1.dll | sed -r -e 's|^_||' -e 's|@[1-9]+$||' > $1.def")
 ExternalProject_Add(vapoursynth
     URL ${link}
     URL_HASH SHA256=${hash}
+    DOWNLOAD_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
     PATCH_COMMAND ""
     CONFIGURE_COMMAND ""

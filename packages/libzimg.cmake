@@ -1,5 +1,6 @@
 ExternalProject_Add(libzimg
-    GIT_REPOSITORY "https://github.com/sekrit-twc/zimg.git"
+    GIT_REPOSITORY https://github.com/sekrit-twc/zimg.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure
         --host=${TARGET_ARCH}

@@ -1,5 +1,6 @@
 ExternalProject_Add(avisynth-headers
     GIT_REPOSITORY https://github.com/AviSynth/AviSynthPlus.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} cmake -H<SOURCE_DIR> -B<BINARY_DIR>

@@ -1,5 +1,6 @@
 ExternalProject_Add(opus
     GIT_REPOSITORY https://github.com/xiph/opus.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} cmake -H<SOURCE_DIR> -B<BINARY_DIR>
         -G Ninja

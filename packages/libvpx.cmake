@@ -6,6 +6,7 @@ endif()
 
 ExternalProject_Add(libvpx
     GIT_REPOSITORY https://chromium.googlesource.com/webm/libvpx.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     GIT_REMOTE_NAME origin
     GIT_TAG main

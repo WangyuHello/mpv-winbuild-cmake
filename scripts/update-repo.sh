@@ -4,7 +4,11 @@ main() {
     packages_dir=$(pwd)
     for dir in $packages_dir/*-prefix ; do
         local name=$(echo $(basename $dir) | sed -e 's|-prefix$||')
-        local src_dir=$packages_dir/$name-prefix/src/$name
+        if [[ ! -z $1 ]]; then
+            local src_dir=$1/$name
+        else
+            local src_dir=$packages_dir/$name-prefix/src/$name
+        fi
         local stamp_dir=$packages_dir/$name-prefix/src/$name-stamp
 
         if [[ -d "$src_dir/.git" ]] ; then
@@ -39,4 +43,4 @@ gitupdate()
 }
 
 # Execute
-main
+main $1

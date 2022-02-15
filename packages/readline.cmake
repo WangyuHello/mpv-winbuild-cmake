@@ -2,6 +2,7 @@ ExternalProject_Add(readline
     DEPENDS
         termcap
     GIT_REPOSITORY https://git.sailfishos.org/mirror/readline.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure

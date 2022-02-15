@@ -1,6 +1,7 @@
 ExternalProject_Add(libbluray
     DEPENDS freetype2
     GIT_REPOSITORY https://code.videolan.org/videolan/libbluray.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure
         --host=${TARGET_ARCH}

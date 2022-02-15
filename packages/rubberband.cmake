@@ -1,5 +1,6 @@
 ExternalProject_Add(rubberband
     GIT_REPOSITORY https://github.com/lachs0r/rubberband.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""

@@ -1,5 +1,6 @@
 ExternalProject_Add(libepoxy
     GIT_REPOSITORY https://github.com/anholt/libepoxy.git
+    SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
     PATCH_COMMAND ${EXEC} curl -s https://patch-diff.githubusercontent.com/raw/anholt/libepoxy/pull/265.patch | patch -p1
     UPDATE_COMMAND ""
