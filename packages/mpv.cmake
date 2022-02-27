@@ -22,7 +22,7 @@ ExternalProject_Add(mpv
         spirv-cross
         vapoursynth
         libsdl2
-    GIT_REPOSITORY https://github.com/mpv-player/mpv.git
+    SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../mpv
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC}
         PKG_CONFIG=pkg-config

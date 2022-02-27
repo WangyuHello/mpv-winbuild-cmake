@@ -3,6 +3,9 @@ project(mpv-cross C)
 include(ExternalProject)
 include(ProcessorCount)
 
+set(ENV{http_proxy} "socks5://127.0.0.1:7890")
+set(ENV{https_proxy} "socks5://127.0.0.1:7890")
+
 if(NOT CMAKE_GENERATOR STREQUAL "Ninja")
     message(WARNING "Generator “${CMAKE_GENERATOR}” is unsupported!\nTry Ninja if you encounter problems.")
 endif()
