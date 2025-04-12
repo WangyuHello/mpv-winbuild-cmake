@@ -70,13 +70,13 @@ jobs:
           restore-keys: |
             ${{ secrets.CACHE_VERSION }}-gcc-${{ matrix.bit }}_toolchain
 
-      - name: Loading repository cache
-        uses: actions/cache/restore@main
-        with:
-          path: src_packages
-          key: ${{ secrets.CACHE_VERSION }}-repository-${{ github.run_id }}
-          restore-keys: |
-            ${{ secrets.CACHE_VERSION }}-repository
+      # - name: Loading repository cache
+      #   uses: actions/cache/restore@main
+      #   with:
+      #     path: src_packages
+      #     key: ${{ secrets.CACHE_VERSION }}-repository-${{ github.run_id }}
+      #     restore-keys: |
+      #       ${{ secrets.CACHE_VERSION }}-repository
 
       - name: Loading rustup cache
         uses: actions/cache/restore@main
@@ -174,7 +174,7 @@ jobs:
           PREFIX: ${{ secrets.CACHE_VERSION }}
         run: |
           cache_key=${CACHE_ID##*-}
-          curl -u shinchiro:$GH_TOKEN $CURL_RETRIES -s -o /dev/null -X DELETE -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/actions/caches?key=$PREFIX-gcc-x86_64_toolchain-$cache_key
+          curl -u shinchiro:$GH_TOKEN $CURL_RETRIES -s -o /dev/null -X DELETE -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/WangyuHello/mpv-winbuild-cmake/actions/caches?key=$PREFIX-gcc-x86_64_toolchain-$cache_key
 
   release:
     name: Upload releases
