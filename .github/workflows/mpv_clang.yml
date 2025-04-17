@@ -79,13 +79,13 @@ jobs:
           restore-keys: |
             ${{ secrets.CACHE_VERSION }}-clang_root
 
-      - name: Loading repository cache
-        uses: actions/cache/restore@main
-        with:
-          path: src_packages
-          key: ${{ secrets.CACHE_VERSION }}-repository-${{ github.run_id }}
-          restore-keys: |
-            ${{ secrets.CACHE_VERSION }}-repository
+      # - name: Loading repository cache
+      #   uses: actions/cache/restore@main
+      #   with:
+      #     path: src_packages
+      #     key: ${{ secrets.CACHE_VERSION }}-repository-${{ github.run_id }}
+      #     restore-keys: |
+      #       ${{ secrets.CACHE_VERSION }}-repository
 
       - name: Loading ${{ matrix.bit }} toolchain cache
         uses: actions/cache/restore@main
