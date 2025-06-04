@@ -34,7 +34,7 @@ ExternalProject_Add(mpv
         --prefer-static
         -Ddebug=true
         -Db_ndebug=true
-        -Doptimization=0
+        -Doptimization=3
         -Db_lto=true
         ${mpv_lto_mode}
         -Dlibmpv=true
