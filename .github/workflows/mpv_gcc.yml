@@ -224,7 +224,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: release/*.7z
           asset_name: mpv
-          tag: ${{ github.ref }}
+          tag: '0.${{ github.run_number }}.${{ github.run_attempt }}'
           overwrite: true
           file_glob: true
-          body: "mpv"
+          body: '0.${{ github.run_number }}.${{ github.run_attempt }}'
